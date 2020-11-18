@@ -12,30 +12,28 @@
 
 # datasets to send
 datasets=(
+rpool/USERDATA/danield_5ddc0h
 )
 # datasets to send recursively
 # even if a dataset does not have any descendant datasets, using a
 # recursive zfs send (-R) is preferable because it will result
 # in locally removed snapshots being removed on the remote end as well
 datasets_recursive=(
-	goliath/public
-	goliath/minecraft
-	goliath/backups
 )
 
 # information about the server on the receiving end
-remote_server='my-backup-server.example.com'
-remote_user='dave'
+remote_server='ala-vmprod01.wrs.com'
+remote_user='root'
 remote_port='22'
-remote_dataset='paper' # zpool name most likely
-remote_command_prefix='sudo' # leave blank for nothing
+remote_dataset='backuppool' # zpool name most likely
+remote_command_prefix='' # leave blank for root user, put sudo for regular
 remote_ssh_opts=(-i /root/backup/backup.key) # additional opts to give to ssh
 
 # prefix to use for snapshots created by this script
 snapshot_prefix='zincrsend_'
 
 # higher = more output
-verbosity_level=0
+verbosity_level=2
 
 # function to execute at the end - can be anything
 # $1 - exit code - the code that will be used when this script exits
@@ -47,7 +45,7 @@ end() {
 		0) msg='ok';;
 		*) msg='failed';;
 	esac
-	/opt/custom/bin/pushover zincrsend "$msg - took $((SECONDS / 60)) minutes"
+	# /opt/custom/bin/pushover zincrsend "$msg - took $((SECONDS / 60)) minutes"
 }
 
 #############
