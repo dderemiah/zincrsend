@@ -23,10 +23,10 @@ datasets_recursive=(
 
 # information about the server on the receiving end
 remote_server='ala-vmprod01.wrs.com'
-remote_user='root'
+remote_user='danield'
 remote_port='22'
 remote_dataset='backuppool' # zpool name most likely
-remote_command_prefix='' # leave blank for root user, put sudo for regular
+remote_command_prefix='sudo' # leave blank for root user, put sudo for regular
 remote_ssh_opts=(-i /root/backup/backup.key) # additional opts to give to ssh
 
 # prefix to use for snapshots created by this script
