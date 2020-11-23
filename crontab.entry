@@ -2,13 +2,13 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin
 
 0 21 * * * date >> /var/log/autosnap.log 2>&1
 
-1 21 * * * /opt/git_clones/zfs-snapshot-all/zfs-snapshot-all automated_daily   >> /var/log/autosnap.log 2>&1
-2 21 * * 0 /opt/git_clones/zfs-snapshot-all/zfs-snapshot-all automated_weekly  >> /var/log/autosnap.log 2>&1
-3 21 1 * * /opt/git_clones/zfs-snapshot-all/zfs-snapshot-all automated_monthly >> /var/log/autosnap.log 2>&1
+1 21 * * * /dpool/git_projects/zfs-snapshot-all/zfs-snapshot-all automated_daily   >> /var/log/autosnap.log 2>&1
+2 21 * * 0 /dpool/git_projects/zfs-snapshot-all/zfs-snapshot-all automated_weekly  >> /var/log/autosnap.log 2>&1
+3 21 1 * * /dpool/git_projects/zfs-snapshot-all/zfs-snapshot-all automated_monthly >> /var/log/autosnap.log 2>&1
 
-5 21 * * * /opt/git_clones/zfs-prune-snapshots/zfs-prune-snapshots -p automated_daily_   7d   >> /var/log/autosnap.log 2>&1
-6 21 * * 0 /opt/git_clones/zfs-prune-snapshots/zfs-prune-snapshots -p automated_weekly_  4w   >> /var/log/autosnap.log 2>&1
-7 21 1 * * /opt/git_clones/zfs-prune-snapshots/zfs-prune-snapshots -p automated_monthly_ 12M  >> /var/log/autosnap.log 2>&1
+5 21 * * * /dpool/git_projects/zfs-prune-snapshots/zfs-prune-snapshots -p automated_daily_   7d   >> /var/log/autosnap.log 2>&1
+6 21 * * 0 /dpool/git_projects/zfs-prune-snapshots/zfs-prune-snapshots -p automated_weekly_  4w   >> /var/log/autosnap.log 2>&1
+7 21 1 * * /dpool/git_projects/zfs-prune-snapshots/zfs-prune-snapshots -p automated_monthly_ 12M  >> /var/log/autosnap.log 2>&1
 
-9  21 * * * /opt/git_clones/zfs-prune-snapshots/zfs-prune-snapshots -p zincrsend_ 1M >> /var/log/zincrsend.log 2>&1
-10 21 * * * /opt/git_clones/zincrsend/zincrsend >> /var/log/zincrsend.log 2>&1'
+9  21 * * * /dpool/git_projects/zfs-prune-snapshots/zfs-prune-snapshots -p zincrsend_ 1M >> /var/log/zincrsend.log 2>&1
+10 21 * * * /dpool/git_projects/zincrsend/zincrsend >> /var/log/zincrsend.log 2>&1'

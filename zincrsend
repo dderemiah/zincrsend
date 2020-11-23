@@ -12,7 +12,7 @@
 
 # datasets to send
 datasets=(
-rpool/USERDATA/danield_5ddc0h
+backuppool/ala-danield-lx2
 )
 # datasets to send recursively
 # even if a dataset does not have any descendant datasets, using a
@@ -22,12 +22,12 @@ datasets_recursive=(
 )
 
 # information about the server on the receiving end
-remote_server='ala-vmprod01.wrs.com'
+remote_server='ala-danield-lx2.wrs.com'
 remote_user='danield'
 remote_port='22'
-remote_dataset='backuppool' # zpool name most likely
+remote_dataset='dpool' # zpool name
 remote_command_prefix='sudo' # leave blank for root user, put sudo for regular
-remote_ssh_opts=(-i /root/backup/backup.key) # additional opts to give to ssh
+remote_ssh_opts= # additional opts to give to ssh
 
 # prefix to use for snapshots created by this script
 snapshot_prefix='zincrsend_'
